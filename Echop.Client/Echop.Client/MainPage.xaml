@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Echop.Client.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="Scan for BLE devices"
+             Visual="Material"
+             mc:Ignorable="d" 
+             BackgroundColor="#FFFFFF">
+    <Grid>
+
+        <StackLayout Orientation="Vertical">
+            <ContentView  VerticalOptions="FillAndExpand">
+                <Image Source="C:\Users\austz\source\repos\Test\Jenx.Bluetooth.UartOverGatt\src\Jenx.Bluetooth.UartOverGatt.Client.Android\Resources\Drawable\Sde.png"
+ VerticalOptions="Center" />
+            </ContentView>
+
+
+            <ListView x:Name="foundBleDevicesListView"
+                      Footer=""
+                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped" 
+                      />
+        </StackLayout>
+        <ActivityIndicator x:Name="IsBusyIndicator"
+                           Scale="0.3" />
+        <Button x:Name="ScanButton"
+                    Margin="10"
+                    Clicked="ScanButton_Clicked"
+                    Text= "Find My Device" 
+                    BackgroundColor="#fda47e"
+                    TextColor="#000000" HorizontalOptions="Center" VerticalOptions="Center" 
+                    
+                    />
+    </Grid>
+
+</ContentPage>
+<!--Padding="0,40,0,40" -->
