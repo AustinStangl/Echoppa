@@ -22,7 +22,7 @@
                 <!-- VerticalOptions="FillAndExpand"-->
                 <!--<Image Source="Sde.png" VerticalOptions="Center"  /> -->
             </ContentView>
-
+            <Label x:Name="RawData" Margin="10,20,350,20" Text="RawData" BackgroundColor="#33000000" />
             <Label x:Name="Throttle" Margin="10,20,350,20" Text="78%" BackgroundColor="#33000000" />
             <Label x:Name="BusVoltage" Margin="10,20,350,20" Text="20V" BackgroundColor="#33000000" />
             <Label x:Name="TotalCurrent" Margin="10,20,350,20" Text="30A" BackgroundColor="#33000000" />

@@ -47,7 +47,7 @@ namespace Echop.Client
                             XamarinEssentials.MainThread.BeginInvokeOnMainThread(() =>
                             {
                                 btdata += Encoding.UTF8.GetString(receivedBytes, 0, receivedBytes.Length) + Environment.NewLine;
-                                // Output.Text = btdata;
+                                //RawData.Text = btdata;
                                 dataParse();
                                 // ThrottleData = Convert.ToDouble(ThrottleString);
 
@@ -80,8 +80,15 @@ namespace Echop.Client
         }
         private void dataParse()
         {
-            Throttle.Text = btdata.Substring(5, 4);
-            BusVoltage.Text = btdata.Substring(15, 4);
+            RawData.Text = btdata;
+            Throttle.Text = btdata.Substring(0, 5);
+            TotalCurrent.Text = btdata.Substring(10, 5);
+            Frequency.Text = btdata.Substring(15, 5);
+            Temp.Text = btdata.Substring(20, 5);
+            TargetVoltage.Text = btdata.Substring(25, 5);
+            SwitchingFreq.Text = btdata.Substring(30, 4);
+            RegenSafetyIn.Text = btdata.Substring(34, 1);
+            DriverState.Text = btdata.Substring(35, 1);
         }
         /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                {
