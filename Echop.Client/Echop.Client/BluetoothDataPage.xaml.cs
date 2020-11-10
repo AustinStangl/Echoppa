@@ -22,9 +22,7 @@ namespace Echop.Client
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
         private string btdata;
-        //Th, Bv, Ac, Fr, tc, Tv, Fs, Rs, Ds; //Throttle, BusVoltage, Total Current, Frequency, Regen/Safety In, Driver State
-
-        //private double ThrottleData;
+        
 
         private async void InitalizeCommandButton_Clicked(object sender, EventArgs e)
         {
@@ -47,20 +45,17 @@ namespace Echop.Client
                             XamarinEssentials.MainThread.BeginInvokeOnMainThread(() =>
                             {
                                 btdata += Encoding.UTF8.GetString(receivedBytes, 0, receivedBytes.Length) + Environment.NewLine;
-                                //RawData.Text = btdata;
-                                dataParse();
-                                // ThrottleData = Convert.ToDouble(ThrottleString);
 
-                                // Output1.Text = "Throttle:"ThrottleData;
-                                // Throttle.Text = btdata.Substring(5, 4);
-                                // BusVoltage.Text = btdata.Substring(15, 4);
-                                //TotalCurrent.Text = btdata.Substring(19, 4);
-                                //Frequency.Text = btdata.Substring(5, 4);
-                                //Temp.Text = btdata.Substring(5, 4);
-                                //TargetVoltage.Text = btdata.Substring(5, 4);
-                                //SwitchingFreq.Text = btdata.Substring(5, 4);
-                                //RegenSafetyIn.Text = btdata.Substring(5, 4);
-                                //DriverState.Text = btdata.Substring(5, 4);
+
+                                //----------Uncomment the lines below to display the Datas length-----------\\
+                                //tring btData = receivedBytes.Length.ToString();
+                                //RawData.Text = btData;
+
+                                //----------Uncomment the lines below to display the RawData----------\\
+                                //RawData.Text = btdata;
+
+                                dataParse();
+                                
                             });
                         };
 
@@ -80,15 +75,17 @@ namespace Echop.Client
         }
         private void dataParse()
         {
-            RawData.Text = btdata;
-            Throttle.Text = btdata.Substring(0, 5);
-            TotalCurrent.Text = btdata.Substring(10, 5);
-            Frequency.Text = btdata.Substring(15, 5);
-            Temp.Text = btdata.Substring(20, 5);
-            TargetVoltage.Text = btdata.Substring(25, 5);
-            SwitchingFreq.Text = btdata.Substring(30, 4);
-            RegenSafetyIn.Text = btdata.Substring(34, 1);
-            DriverState.Text = btdata.Substring(35, 1);
+           
+            Throttle.Text = btdata.Substring(4, 4);
+            BusVoltage.Text = btdata.Substring(10, 4);
+            TotalCurrent.Text = btdata.Substring(14, 4);
+            Frequency.Text = btdata.Substring(18, 3);
+            
+            //Temp.Text = btdata.Substring(21, 3);  //The Code doesnt seem to like any values above 20
+            //TargetVoltage.Text = btdata.Substring(25, 5);
+            //SwitchingFreq.Text = btdata.Substring(30, 4);
+            //RegenSafetyIn.Text = btdata.Substring(34, 1);
+            //DriverState.Text = btdata.Substring(35, 1); 
         }
         /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                {

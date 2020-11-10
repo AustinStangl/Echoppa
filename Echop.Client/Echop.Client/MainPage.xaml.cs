@@ -44,7 +44,7 @@ namespace Echop.Client
         {
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             foundBleDevicesListView.ItemsSource = null;
-            ScanButton.Text = "Refresh";
+            ScanButton.Text = "Searching For Device";
 
             if (!await PermissionsGrantedAsync())
             {
@@ -68,6 +68,7 @@ namespace Echop.Client
         {
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             IDevice selectedItem = e.Item as IDevice;
+            ScanButton.Text = "Rescan";
 
             if (selectedItem.State == DeviceState.Connected)
             {
