@@ -49,7 +49,7 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the Datas length-----------\\
                                 //tring btData = receivedBytes.Length.ToString();
-                                //RawData.Text = btData;
+                                RawData.Text = btdata;
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
@@ -76,13 +76,12 @@ namespace Echop.Client
         private void dataParse()
         {
            
-            Throttle.Text = btdata.Substring(4, 4);
+            Throttle.Text = btdata.Substring(6, 4);
             BusVoltage.Text = btdata.Substring(10, 4);
             TotalCurrent.Text = btdata.Substring(14, 4);
-            Frequency.Text = btdata.Substring(18, 3);
-            
+            Frequency.Text = btdata.Substring(18, 3);           
             //Temp.Text = btdata.Substring(21, 3);  //The Code doesnt seem to like any values above 20
-            //TargetVoltage.Text = btdata.Substring(25, 5);
+            ///TargetVoltage.Text = btdata.Substring(25, 5);
             //SwitchingFreq.Text = btdata.Substring(30, 4);
             //RegenSafetyIn.Text = btdata.Substring(34, 1);
             //DriverState.Text = btdata.Substring(35, 1); 

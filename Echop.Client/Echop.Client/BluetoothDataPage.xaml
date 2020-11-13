@@ -29,13 +29,13 @@
             <Label x:Name="Throttle"       Text=""  Grid.Row="0" Grid.Column="0" BackgroundColor="#fda47e" />
             <Label x:Name="BusVoltage"    Text=""  Grid.Row="0" Grid.Column="1" BackgroundColor="#fda47e"/>
             <Label x:Name="TotalCurrent"   Text=""  Grid.Row="0" Grid.Column="2" BackgroundColor="#fda47e"/>
-            <Label x:Name="Frequency"      Text=""  Grid.Row="0" Grid.Column="1" BackgroundColor="#fda47e"/>
+            <Label x:Name="Frequency"      Text=""  Grid.Row="0" Grid.Column="3" BackgroundColor="#fda47e"/>
             <Label x:Name="Temp"      Text=""  Grid.Row="1" Grid.Column="0" BackgroundColor="#fda47e"/>
             <Label x:Name="TargetVoltage"      Text=""  Grid.Row="1" Grid.Column="1" BackgroundColor="#fda47e"/>
             <Label x:Name="SwitchingFreq"      Text=""  Grid.Row="1" Grid.Column="2" BackgroundColor="#fda47e"/>
-            <Label x:Name="RegenSafetyIn"      Text=""  Grid.Row="2" Grid.Column="0" BackgroundColor="#fda47e"/>
-            <Label x:Name="DriverState"      Text=""  Grid.Row="2" Grid.Column="1" BackgroundColor="#fda47e"/>
-            <Label x:Name="Blank"      Text=""  Grid.Row="2" Grid.Column="2" BackgroundColor="#fda47e"/>
+            <Label x:Name="RegenSafetyIn"      Text=""  Grid.Row="1" Grid.Column="3" BackgroundColor="#fda47e"/>
+            <Label x:Name="DriverState"      Text=""  Grid.Row="2" Grid.Column="0" BackgroundColor="#fda47e"/>
+            <Label x:Name="RawData"      Text=""  Grid.Row="2" Grid.Column="1" BackgroundColor="#fda47e"/>
             <Label x:Name="blank"      Text=""  Grid.Row="3" Grid.Column="0"/>
 <Button x:Name="InitButton"
                     HorizontalOptions="Center" VerticalOptions="Center" 
