@@ -9,22 +9,43 @@
              Visual="Material"
              mc:Ignorable="d">
     <ContentPage.Content>
-
-        <StackLayout Orientation ="Vertical" >
-
-
-
-
-
-            <ContentView >
-
-
-                <!-- VerticalOptions="FillAndExpand"-->
-                <!--<Image Source="Sde.png" VerticalOptions="Center"  /> -->
-            </ContentView>
+        
+        
             
-            <Label x:Name="RawData"       Margin="10,20,350,20" Text="RawData" BackgroundColor="#33000000" />
-            <Label x:Name="Throttle"      Margin="10,20,350,20" Text="78%"     BackgroundColor="#33000000" />
+            <Grid Margin="5">
+                
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label x:Name="Throttle"       Text=""  Grid.Row="0" Grid.Column="0" BackgroundColor="#fda47e" />
+            <Label x:Name="BusVoltage"    Text=""  Grid.Row="0" Grid.Column="1" BackgroundColor="#fda47e"/>
+            <Label x:Name="TotalCurrent"   Text=""  Grid.Row="0" Grid.Column="2" BackgroundColor="#fda47e"/>
+            <Label x:Name="Frequency"      Text=""  Grid.Row="0" Grid.Column="1" BackgroundColor="#fda47e"/>
+            <Label x:Name="Temp"      Text=""  Grid.Row="1" Grid.Column="0" BackgroundColor="#fda47e"/>
+            <Label x:Name="TargetVoltage"      Text=""  Grid.Row="1" Grid.Column="1" BackgroundColor="#fda47e"/>
+            <Label x:Name="SwitchingFreq"      Text=""  Grid.Row="1" Grid.Column="2" BackgroundColor="#fda47e"/>
+            <Label x:Name="RegenSafetyIn"      Text=""  Grid.Row="2" Grid.Column="0" BackgroundColor="#fda47e"/>
+            <Label x:Name="DriverState"      Text=""  Grid.Row="2" Grid.Column="1" BackgroundColor="#fda47e"/>
+            <Label x:Name="Blank"      Text=""  Grid.Row="2" Grid.Column="2" BackgroundColor="#fda47e"/>
+            <Label x:Name="blank"      Text=""  Grid.Row="3" Grid.Column="0"/>
+<Button x:Name="InitButton"
+                    HorizontalOptions="Center" VerticalOptions="Center" 
+                    Margin="10"
+                    Clicked="InitalizeCommandButton_Clicked"
+                    Text="Connect" 
+                    BackgroundColor="#fda47e"
+                    TextColor="#000000"
+                    Grid.Row="3" Grid.Column="1"/>
+            <!--  <Label x:Name="Throttle"      Margin="10,20,350,20" Text="78%"     BackgroundColor="#33000000" />
             <Label x:Name="BusVoltage"    Margin="10,20,350,20" Text="20V"     BackgroundColor="#33000000" />
             <Label x:Name="TotalCurrent"  Margin="10,20,350,20" Text="30A"     BackgroundColor="#33000000" />
             <Label x:Name="Frequency"     Margin="10,20,350,20" Text="75Hz"    BackgroundColor="#33000000"  />
@@ -32,16 +53,18 @@
             <Label x:Name="TargetVoltage" Margin="10,20,350,20" Text="20V"     BackgroundColor="#33000000" />
             <Label x:Name="SwitchingFreq" Margin="10,20,350,20" Text="10K"     BackgroundColor="#33000000" />
             <Label x:Name="RegenSafetyIn" Margin="10,20,350,20" Text="On"      BackgroundColor="#33000000"  />
-            <Label x:Name="DriverState"   Margin="10,20,350,20" Text="Enabled" BackgroundColor="#33000000" />
+            <Label x:Name="DriverState"   Margin="10,20,350,20" Text="Enabled" BackgroundColor="#33000000" /> -->
+            
+            </Grid>
+            
 
-            <Button x:Name="InitButton"
-                    AnchorY="500"
-                    Margin="10"
-                    Clicked="InitalizeCommandButton_Clicked"
-                    Text="Connect" 
-                    BackgroundColor="#fda47e"
-                    TextColor="#000000" VerticalOptions="End" />
-            <!-- <Button x:Name="ScanButton"
+
+       
+
+
+
+
+        <!-- <Button x:Name="ScanButton" 
                     Margin="10"
                     Clicked="SendCommandButton_Clicked"
                     Text="Send command"
@@ -57,6 +80,6 @@
             <Label x:Name="Output"/>
 
             </ScrollView>-->
-        </StackLayout>
+        
     </ContentPage.Content>
     </ContentPage>
