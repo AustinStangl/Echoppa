@@ -21,8 +21,10 @@ namespace Echop.Client
 
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
-        private string btdata, throttleData;
-        
+        private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData;
+        private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD;
+      
+
 
         private async void InitalizeCommandButton_Clicked(object sender, EventArgs e)
         {
@@ -82,20 +84,67 @@ namespace Echop.Client
         {
            
             throttleData = btdata.Substring(6, 4);
-            BusVoltage.Text = btdata.Substring(10, 4);
-            TotalCurrent.Text = btdata.Substring(14, 4);
-            Frequency.Text = btdata.Substring(18, 4);           
-            Temp.Text = btdata.Substring(21, 3);  //The Code doesnt seem to like any values above 20
-            TargetVoltage.Text = btdata.Substring(25, 5);
-            SwitchingFreq.Text = btdata.Substring(30, 4);
-            RegenSafetyIn.Text = btdata.Substring(34, 1);
-            DriverState.Text = btdata.Substring(35, 1);
+            busData = btdata.Substring(10, 4);
+            currentData = btdata.Substring(14, 4);
+            freqData = btdata.Substring(18, 4);
+            tempData = btdata.Substring(22, 3);
+            targetvData = btdata.Substring(25, 5);
             
+              
+              switchFreqData = btdata.Substring(30, 4);
+              regSafetyInData = btdata.Substring(33, 1);
+              driverStateData = btdata.Substring(34, 1);
+               
         }
 
         private void formatTheData()
         {
-            Throttle.Text = throttleData;
+            
+            throttleD = (float.Parse(throttleData))/10;           
+            Throttle.Text ="Throttle: " +(throttleD.ToString()) + "%";
+
+            busD = (float.Parse(busData)) / 10;
+            BusVoltage.Text = "Bus Voltage: " + (busD.ToString()) + "V";
+
+            currentD = (float.Parse(currentData)) / 10;
+            TotalCurrent.Text = "Total Current: " + (currentD.ToString()) + "A";
+
+            freqD = (float.Parse(freqData)) / 10;
+            Frequency.Text = "Frequency " + (freqD.ToString()) + "Hz";
+
+            tempD = (float.Parse(tempData)) / 10;
+            Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
+
+            targetvD = (float.Parse(targetvData)) / 10;
+            TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
+
+            switchFreqD= (float.Parse(switchFreqData)) / 10;
+            SwitchingFreq.Text = "Switching Frequency: " + (switchFreqD.ToString()) + "A";
+
+           regSafetyInD = (float.Parse(regSafetyInData));
+            if(regSafetyInD == 1)
+            { 
+                RegenSafetyIn.Text = "Regen Safety In: ON";
+            }
+            else
+            {
+                RegenSafetyIn.Text = "Regen Safety In: OFF";
+            }
+
+            driverStateD = (float.Parse(driverStateData));
+            if (driverStateD == 1)
+            {
+                DriverState.Text = "Driver State: ON";
+            }
+            else
+            {
+                DriverState.Text = "Driver State: OFF";
+            }
+
+            
+            // driverStateD = (int.Parse(driverStateData));
+            // DriverState.Text = "Driver State: " + (driverStateD.ToString());
+
         }
         /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                {
