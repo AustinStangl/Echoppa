@@ -21,7 +21,7 @@ namespace Echop.Client
 
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
-        private string btdata;
+        private string btdata, throttleData;
         
 
         private async void InitalizeCommandButton_Clicked(object sender, EventArgs e)
@@ -56,7 +56,8 @@ namespace Echop.Client
                                 if(btdata.Length >= 35)     //Checks to make sure the recived data is the correct length
                                 {
                                     dataParse();
-                                    btdata = null;          //Removes previous string after parsing data
+                                    btdata = null;          //Removes previous string after parsing data\
+                                    formatTheData();
                                 }
                                 
                                 
@@ -80,7 +81,7 @@ namespace Echop.Client
         private void dataParse()
         {
            
-            Throttle.Text = btdata.Substring(6, 4);
+            throttleData = btdata.Substring(6, 4);
             BusVoltage.Text = btdata.Substring(10, 4);
             TotalCurrent.Text = btdata.Substring(14, 4);
             Frequency.Text = btdata.Substring(18, 4);           
@@ -88,7 +89,13 @@ namespace Echop.Client
             TargetVoltage.Text = btdata.Substring(25, 5);
             SwitchingFreq.Text = btdata.Substring(30, 4);
             RegenSafetyIn.Text = btdata.Substring(34, 1);
-            DriverState.Text = btdata.Substring(35, 1); 
+            DriverState.Text = btdata.Substring(35, 1);
+            
+        }
+
+        private void formatTheData()
+        {
+            Throttle.Text = throttleData;
         }
         /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                {
