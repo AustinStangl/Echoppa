@@ -82,18 +82,16 @@ namespace Echop.Client
         }
         private void dataParse()
         {
-           
+            //Throttle.Text = btdata.Substring(0, 3);
             throttleData = btdata.Substring(6, 4);
-            busData = btdata.Substring(10, 4);
+            busData = btdata.Substring(10 , 4);
             currentData = btdata.Substring(14, 4);
             freqData = btdata.Substring(18, 4);
-            tempData = btdata.Substring(22, 3);
-            targetvData = btdata.Substring(25, 5);
-            
-              
-              switchFreqData = btdata.Substring(30, 4);
-              regSafetyInData = btdata.Substring(33, 1);
-              driverStateData = btdata.Substring(34, 1);
+            tempData = btdata.Substring(22, 4);
+            targetvData = btdata.Substring(26, 4);
+            switchFreqData = btdata.Substring(30, 3);
+            regSafetyInData = btdata.Substring(33, 1);
+            driverStateData = btdata.Substring(34, 1);
                
         }
 
