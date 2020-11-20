@@ -23,7 +23,7 @@ namespace Echop.Client
         private ICharacteristic receiveCharacteristic;
         private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData;
         private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD;
-      
+
 
 
         private async void InitalizeCommandButton_Clicked(object sender, EventArgs e)
@@ -55,14 +55,14 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
-                                if(btdata.Length >= 35)     //Checks to make sure the recived data is the correct length
+                                if (btdata.Length >= 35)     //Checks to make sure the recived data is the correct length
                                 {
                                     dataParse();
                                     btdata = null;          //Removes previous string after parsing data\
                                     formatTheData();
                                 }
-                                
-                                
+
+
                             });
                         };
 
@@ -89,7 +89,7 @@ namespace Echop.Client
         {
             //Throttle.Text = btdata.Substring(0, 3);
             throttleData = btdata.Substring(6, 4);
-            busData = btdata.Substring(10 , 4);
+            busData = btdata.Substring(10, 4);
             currentData = btdata.Substring(14, 4);
             freqData = btdata.Substring(18, 4);
             tempData = btdata.Substring(22, 4);
@@ -97,14 +97,14 @@ namespace Echop.Client
             switchFreqData = btdata.Substring(30, 3);
             regSafetyInData = btdata.Substring(33, 1);
             driverStateData = btdata.Substring(34, 1);
-               
+
         }
 
         private void formatTheData()
         {
-            
-            throttleD = (float.Parse(throttleData))/10;           
-            Throttle.Text ="Throttle: " +(throttleD.ToString()) + "%";
+
+            throttleD = (float.Parse(throttleData)) / 10;
+            Throttle.Text = "Throttle: " + (throttleD.ToString()) + "%";
 
             busD = (float.Parse(busData)) / 10;
             BusVoltage.Text = "Bus Voltage: " + (busD.ToString()) + "V";
@@ -121,47 +121,52 @@ namespace Echop.Client
             targetvD = (float.Parse(targetvData)) / 10;
             TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
 
-            switchFreqD= (float.Parse(switchFreqData)) / 10;
+            switchFreqD = (float.Parse(switchFreqData)) / 10;
             SwitchingFreq.Text = "Switching Frequency: " + (switchFreqD.ToString()) + "A";
 
-           regSafetyInD = (float.Parse(regSafetyInData));
-            if(regSafetyInD == 1)
-            { 
+            regSafetyInD = (float.Parse(regSafetyInData));
+            if (regSafetyInD == 1)
+            {
                 RegenSafetyIn.Text = "Regen Safety In: ON";
+                RegenSafetyIn.BackgroundColor = Color.Green;
             }
             else
             {
                 RegenSafetyIn.Text = "Regen Safety In: OFF";
+                RegenSafetyIn.BackgroundColor = Color.Red;
             }
 
             driverStateD = (float.Parse(driverStateData));
             if (driverStateD == 1)
             {
                 DriverState.Text = "Driver State: ON";
+                DriverState.BackgroundColor = Color.Green;
             }
             else
             {
                 DriverState.Text = "Driver State: OFF";
+                DriverState.BackgroundColor = Color.Red;
+
+
+                // driverStateD = (int.Parse(driverStateData));
+                // DriverState.Text = "Driver State: " + (driverStateD.ToString());
+
             }
-
-            
-            // driverStateD = (int.Parse(driverStateData));
-            // DriverState.Text = "Driver State: " + (driverStateD.ToString());
-
-        }
-        /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
-               {
-                   try
+            /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                    {
-                       if (sendCharacteristic != null)
+                       try
                        {
-                         //  var bytes = await sendCharacteristic.WriteAsync(Encoding.ASCII.GetBytes($"{CommandTxt.Text}\r\n"));
+                           if (sendCharacteristic != null)
+                           {
+                             //  var bytes = await sendCharacteristic.WriteAsync(Encoding.ASCII.GetBytes($"{CommandTxt.Text}\r\n"));
+                           }
                        }
-                   }
-                   catch
-                   {
-                       //Output1.Text += "Error sending comand to UART." + Environment.NewLine;
-                   }
-               }*/
+                       catch
+                       {
+                           //Output1.Text += "Error sending comand to UART." + Environment.NewLine;
+                       }
+                   }*/
+        }
+
     }
 }
