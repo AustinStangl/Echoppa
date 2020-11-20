@@ -66,6 +66,7 @@ namespace Echop.Client
 
         private async void FoundBluetoothDevicesListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            ScanButton.Text = "Rescan";
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             IDevice selectedItem = e.Item as IDevice;
             ScanButton.Text = "Rescan";

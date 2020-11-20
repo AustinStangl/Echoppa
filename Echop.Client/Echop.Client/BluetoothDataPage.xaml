@@ -12,16 +12,16 @@
 
 
         <AbsoluteLayout >
-            <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="5, 5, 120, 120" Clicked="ThrottleButton_Clicked" BackgroundColor="#fda47e" />
-            <Button x:Name="BusVoltage"     Text=""  AbsoluteLayout.LayoutBounds="130, 5, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="255, 5, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="5, 130, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="Temp"           Text=""  AbsoluteLayout.LayoutBounds="130, 130, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="255, 130, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="SwitchingFreq"      Text=""   AbsoluteLayout.LayoutBounds="5, 255, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="130, 255, 120, 120" BackgroundColor="#fda47e"/>
-            <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="255, 255, 120, 120" BackgroundColor="#fda47e"/>
-            <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 380, 120, 120" BackgroundColor="#fda47e"/>
+            <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="5, 5, 130, 130" Clicked="ThrottleButton_Clicked" BackgroundColor="#fda47e" />
+            <Button x:Name="BusVoltage"     Text=""  AbsoluteLayout.LayoutBounds="140, 5, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="275, 5, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="5, 140, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="Temp"           Text=""  AbsoluteLayout.LayoutBounds="140, 140, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="275, 140, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="SwitchingFreq"      Text=""   AbsoluteLayout.LayoutBounds="5, 275, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="140, 275, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="275, 275, 130, 130" BackgroundColor="#fda47e"/>
+            <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
             
 
             
@@ -32,7 +32,7 @@
                     Text="Connect" 
                     BackgroundColor="#fda47e"
                     TextColor="#000000"
-                    AbsoluteLayout.LayoutBounds="130, 600"/>
+                    AbsoluteLayout.LayoutBounds="130, 600, 151, 60 "/>
 
             <Grid Margin="5" >
                 
