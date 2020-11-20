@@ -16,18 +16,7 @@
            
             
 
-            <Grid Margin="5" >
-                
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            
 
             
           <!--  <Label x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="0, 5, 20, 20" BackgroundColor="#fda47e" /> 
@@ -59,7 +48,7 @@
             <Label x:Name="RegenSafetyIn" Margin="10,20,350,20" Text="On"      BackgroundColor="#33000000"  />
             <Label x:Name="DriverState"   Margin="10,20,350,20" Text="Enabled" BackgroundColor="#33000000" /> -->
             
-            </Grid>
+           
             </AbsoluteLayout>
 
 
