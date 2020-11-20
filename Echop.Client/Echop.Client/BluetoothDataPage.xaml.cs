@@ -80,6 +80,11 @@ namespace Echop.Client
                 // Output1.Text += "Error initializing UART GATT service." + Environment.NewLine;
             }
         }
+
+        private async void ThrottleButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ThrottlePage());
+        }
         private void dataParse()
         {
             //Throttle.Text = btdata.Substring(0, 3);
