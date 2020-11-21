@@ -21,8 +21,8 @@
             <Button x:Name="SwitchingFreq"      Text=""   AbsoluteLayout.LayoutBounds="5, 275, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="140, 275, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="275, 275, 130, 130" BackgroundColor="#fda47e"/>
-            <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
-            
+          <!--  <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
+            -->
 
             
 

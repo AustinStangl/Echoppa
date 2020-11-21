@@ -51,7 +51,7 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the Datas length-----------\\
                                 //tring btData = receivedBytes.Length.ToString();
-                                RawData.Text = btdata;
+                                //RawData.Text = btdata;
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
