@@ -7,14 +7,25 @@ using XamarinEssentials = Xamarin.Essentials;
 
 namespace Echop.Client
 {
+    
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ThrottlePage : ContentPage
     {
-        public ThrottlePage()
+
+        //private readonly IDevice _connectedDevice;
+        public ThrottlePage(string throttleData)
         {
             InitializeComponent();
+            
+            Throttle.Text = throttleData;
+            
             //_connectedDevice = connectedDevice;
             // InitButton.IsEnabled = !(ScanButton.IsEnabled = false);
+        }
+        private void ThrottleUpdate()
+        {
+           // Throttle.Text = throttleData;
+            // Throttle.Text = ttd;
         }
     }
     }

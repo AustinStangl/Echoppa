@@ -81,9 +81,9 @@ namespace Echop.Client
             }
         }
 
-        private async void ThrottleButton_Clicked(object sender, EventArgs e)
+        private void ThrottleButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ThrottlePage());
+             Navigation.PushAsync(new ThrottlePage(Throttle.Text));
         }
         private void dataParse()
         {

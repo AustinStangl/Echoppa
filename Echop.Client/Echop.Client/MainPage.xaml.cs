@@ -62,14 +62,15 @@ namespace Echop.Client
 
             foundBleDevicesListView.ItemsSource = _gattDevices.ToArray();
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
+            ScanButton.Text = "Rescan";
         }
 
         private async void FoundBluetoothDevicesListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            ScanButton.Text = "Rescan";
+            
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             IDevice selectedItem = e.Item as IDevice;
-            ScanButton.Text = "Rescan";
+            //ScanButton.Text = "Rescan";
 
             if (selectedItem.State == DeviceState.Connected)
             {
