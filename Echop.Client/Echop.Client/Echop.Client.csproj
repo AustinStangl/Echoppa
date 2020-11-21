@@ -27,7 +27,7 @@
     <Compile Update="ThrottlePage.xaml.cs">
       <DependentUpon>ThrottlePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="BluetoothDataPage.xaml.cs">
+    <Compile Update="Pages\BluetoothDataPage.xaml.cs">
       <DependentUpon>BluetoothDataPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>

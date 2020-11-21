@@ -8,7 +8,7 @@
              Visual="Material"
              mc:Ignorable="d" 
              BackgroundColor="#FFFFFF">
-    <Grid>
+    <AbsoluteLayout>
         
         <StackLayout Orientation="Vertical">
             <ContentView  VerticalOptions="FillAndExpand">
@@ -22,16 +22,17 @@
                       />
         </StackLayout>
         <ActivityIndicator x:Name="IsBusyIndicator"
-                           Scale="0.3" />
+                           Scale="1" 
+                           AbsoluteLayout.LayoutBounds="185, 600" />
         <Button x:Name="ScanButton"
                     Margin="10"
                     Clicked="ScanButton_Clicked"
                     Text= "Find My Device" 
                     BackgroundColor="#fda47e"
-                    TextColor="#000000" HorizontalOptions="Center" VerticalOptions="Center" 
+                    TextColor="#000000" AbsoluteLayout.LayoutBounds="130, 600, 151, 80 " 
                     
                     />
-    </Grid>
+    </AbsoluteLayout>
 
 </ContentPage>
 <!--Padding="0,40,0,40" -->
