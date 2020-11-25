@@ -21,8 +21,8 @@ namespace Echop.Client
 
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
-        private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData;
-        private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD;
+        private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData;
+        private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
 
 
 
@@ -94,9 +94,10 @@ namespace Echop.Client
             freqData = btdata.Substring(18, 4);
             tempData = btdata.Substring(22, 4);
             targetvData = btdata.Substring(26, 4);
-            switchFreqData = btdata.Substring(30, 3);
-            regSafetyInData = btdata.Substring(33, 1);
-            driverStateData = btdata.Substring(34, 1);
+            directionData = btdata.Substring(30, 1);
+            regSafetyInData = btdata.Substring(31, 1);
+            driverStateData = btdata.Substring(32, 1);
+            flagData = btdata.Substring(33, 1);
 
         }
 
@@ -121,8 +122,8 @@ namespace Echop.Client
             targetvD = (float.Parse(targetvData)) / 10;
             TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
 
-            switchFreqD = (float.Parse(switchFreqData)) / 10;
-            SwitchingFreq.Text = "Switching Frequency: " + (switchFreqD.ToString()) + "A";
+            directionD = (float.Parse(directionData));
+            Direction.Text = "Direction: " + (directionD.ToString());
 
             regSafetyInD = (float.Parse(regSafetyInData));
             if (regSafetyInD == 1)
@@ -152,6 +153,9 @@ namespace Echop.Client
                 // DriverState.Text = "Driver State: " + (driverStateD.ToString());
 
             }
+
+            flagD = (float.Parse(flagData));
+            Flags.Text = "Flags: " + (flagD.ToString());
             /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                    {
                        try

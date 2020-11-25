@@ -18,9 +18,10 @@
             <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="5, 140, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="Temp"           Text=""  AbsoluteLayout.LayoutBounds="140, 140, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="275, 140, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="SwitchingFreq"      Text=""   AbsoluteLayout.LayoutBounds="5, 275, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="Direction"      Text=""   AbsoluteLayout.LayoutBounds="5, 275, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="140, 275, 130, 130" BackgroundColor="#fda47e"/>
             <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="275, 275, 130, 130" BackgroundColor="#fda47e"/>
+            <Button x:Name="Flags"      Text=""   AbsoluteLayout.LayoutBounds="25, 410, 361, 100" BackgroundColor="#fda47e"/>
           <!--  <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
             -->
 
