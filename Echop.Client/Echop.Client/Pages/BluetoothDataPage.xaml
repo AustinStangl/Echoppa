@@ -26,8 +26,8 @@
             <ProgressBar x:Name="ThrottleBar" ProgressColor="Orange" BackgroundColor="SlateGray" WidthRequest="200" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="CenterAndExpand"/>
             <skia:SKCanvasView x:Name="throttleCanvas"
                                PaintSurface="throttleCanvas_PaintSurface"
-                               WidthRequest="100"
-                               HeightRequest="100"/>
+                               WidthRequest="400"
+                               HeightRequest="400"/>
             <!--  <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
             -->
 

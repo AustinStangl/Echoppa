@@ -21,6 +21,15 @@ namespace Echop.Client
             InitializeComponent();
             _connectedDevice = connectedDevice;
 
+            //make dial ring
+            DialRing.MoveTo(-60, 60);
+            DialRing.LineTo(-70, 70);
+            DialRing.ArcTo(new SKPoint(-70, 70), 0, SKPathArcSize.Large, SKPathDirection.Clockwise, new SKPoint(70, 70));
+            DialRing.LineTo(60, 60);
+            DialRing.ArcTo(new SKPoint(60, 60), 0, SKPathArcSize.Large, SKPathDirection.CounterClockwise, new SKPoint(-60, 60));
+            DialRing.Close();
+
+
             //set a 60Hz refresh
             Device.StartTimer(TimeSpan.FromSeconds(1f / 60), () =>
                 {
@@ -42,17 +51,26 @@ namespace Echop.Client
         SKPaint tanFillPaint = new SKPaint
         {
             Style = SKPaintStyle.Fill,
-            Color = SKColor.Parse("#f2efdbff")
+            Color = SKColor.Parse("#f2efdb")
         };
 
-        SKPaint orangeFillPaint = new SKPaint
+        SKPaint orangeStrokePaint = new SKPaint
         {
             Style = SKPaintStyle.Fill,
-            Color = SKColor.Parse("#fda47eff"),
-            StrokeCap = SKStrokeCap.Round,
+            Color = SKColor.Parse("#fda47e"),
             StrokeWidth = 5,
+            StrokeCap = SKStrokeCap.Round,
             IsAntialias = true
         };
+
+        SKPaint grayFillPaint = new SKPaint
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColor.Parse("#8c8a8b"),
+            IsAntialias = true
+        };
+
+        SKPath DialRing = new SKPath();
 
 
         private void throttleCanvas_PaintSurface(object sender, SKPaintSurfaceEventArgs e)
@@ -61,7 +79,7 @@ namespace Echop.Client
             SKSurface surface = e.Surface;
             SKCanvas canvas = surface.Canvas;
 
-            canvas.Clear(SKColors.CornflowerBlue);
+            canvas.Clear();
 
             //set transform
             int height = e.Info.Height;
@@ -73,11 +91,13 @@ namespace Echop.Client
             //indicator Background
             canvas.DrawCircle(0, 0, 100, tanFillPaint);
 
+            //indicator Dial
+            //canvas.DrawPath(DialRing, grayFillPaint);
+
             //needle
             canvas.Save();
-            canvas.RotateDegrees(270 * throttleD/100);
-            orangeFillPaint.StrokeWidth = 15;
-            canvas.DrawLine(0, 0, -50, 50, orangeFillPaint);
+            canvas.RotateDegrees(270f * throttleD/100f);
+            canvas.DrawLine(0, 0, -70, 70, orangeStrokePaint);
             canvas.Restore();
         }
 
