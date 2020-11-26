@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using XamarinEssentials = Xamarin.Essentials;
 using Microcharts;
 using SkiaSharp;
+using SkiaSharp.Views.Forms;
 
 namespace Echop.Client
 {
@@ -19,14 +20,66 @@ namespace Echop.Client
         {
             InitializeComponent();
             _connectedDevice = connectedDevice;
+
+            //set a 60Hz refresh
+            Device.StartTimer(TimeSpan.FromSeconds(1f / 60), () =>
+                {
+                    throttleCanvas.InvalidateSurface();
+                    return true;
+                });
+
+
             // InitButton.IsEnabled = !(ScanButton.IsEnabled = false);
         }
 
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
         private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData, startCheck;
-        private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
+        private float busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
 
+        private float throttleD = 0;
+
+        SKPaint tanFillPaint = new SKPaint
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColor.Parse("#f2efdbff")
+        };
+
+        SKPaint orangeFillPaint = new SKPaint
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColor.Parse("#fda47eff"),
+            StrokeCap = SKStrokeCap.Round,
+            StrokeWidth = 5,
+            IsAntialias = true
+        };
+
+
+        private void throttleCanvas_PaintSurface(object sender, SKPaintSurfaceEventArgs e)
+        {
+            //https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/ was very helpful
+            SKSurface surface = e.Surface;
+            SKCanvas canvas = surface.Canvas;
+
+            canvas.Clear(SKColors.CornflowerBlue);
+
+            //set transform
+            int height = e.Info.Height;
+            int width = e.Info.Width;
+
+            canvas.Translate(width / 2, height / 2);
+            canvas.Scale(width / 200);
+
+            //indicator Background
+            canvas.DrawCircle(0, 0, 100, tanFillPaint);
+
+            //needle
+            canvas.Save();
+            canvas.RotateDegrees(270 * throttleD/100);
+            orangeFillPaint.StrokeWidth = 15;
+            canvas.DrawLine(0, 0, -50, 50, orangeFillPaint);
+            canvas.Restore();
+        }
 
 
         private async void InitalizeCommandButton_Clicked(object sender, EventArgs e)
