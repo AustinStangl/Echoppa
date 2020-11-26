@@ -21,7 +21,7 @@ namespace Echop.Client
 
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
-        private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData;
+        private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData, startCheck;
         private float throttleD, busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
 
 
@@ -47,7 +47,10 @@ namespace Echop.Client
                             XamarinEssentials.MainThread.BeginInvokeOnMainThread(() =>
                             {
                                 btdata += Encoding.UTF8.GetString(receivedBytes, 0, receivedBytes.Length); // + Environment.NewLine;
-
+                                if(btdata.Substring(0, 3) != "EEE")
+                                {
+                                    btdata = null;
+                                }
 
                                 //----------Uncomment the lines below to display the Datas length-----------\\
                                 //tring btData = receivedBytes.Length.ToString();
@@ -55,7 +58,7 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
-                                if (btdata.Length >= 35)     //Checks to make sure the recived data is the correct length
+                                if (btdata.Length >= 38)     //Checks to make sure the recived data is the correct length
                                 {
                                     dataParse();
                                     btdata = null;          //Removes previous string after parsing data\
@@ -88,6 +91,7 @@ namespace Echop.Client
         private void dataParse()
         {
             //Throttle.Text = btdata.Substring(0, 3);
+            startCheck = btdata.Substring(0, 3);
             throttleData = btdata.Substring(6, 4);
             busData = btdata.Substring(10, 4);
             currentData = btdata.Substring(14, 4);
@@ -97,7 +101,7 @@ namespace Echop.Client
             directionData = btdata.Substring(30, 1);
             regSafetyInData = btdata.Substring(31, 1);
             driverStateData = btdata.Substring(32, 1);
-            flagData = btdata.Substring(33, 1);
+            flagData = btdata.Substring(33, 4);
 
         }
 
@@ -105,6 +109,7 @@ namespace Echop.Client
         {
 
             throttleD = (float.Parse(throttleData)) / 10;
+            ThrottleBar.ProgressTo(throttleD/100, 100, Easing.Linear);
             Throttle.Text = "Throttle: " + (throttleD.ToString()) + "%";
 
             busD = (float.Parse(busData)) / 10;
@@ -113,8 +118,6 @@ namespace Echop.Client
             currentD = (float.Parse(currentData)) / 10;
             TotalCurrent.Text = "Total Current: " + (currentD.ToString()) + "A";
 
-            freqD = (float.Parse(freqData)) / 10;
-            Frequency.Text = "Frequency " + (freqD.ToString()) + "Hz";
 
             tempD = (float.Parse(tempData)) / 10;
             Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
