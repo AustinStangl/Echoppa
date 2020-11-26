@@ -4,6 +4,8 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinEssentials = Xamarin.Essentials;
+using Microcharts;
+using SkiaSharp;
 
 namespace Echop.Client
 {
@@ -11,10 +13,21 @@ namespace Echop.Client
     public partial class BluetoothDataPage : ContentPage
     {
         private readonly IDevice _connectedDevice;
+        private readonly ChartEntry[] entries = new[]
+        {
+            new ChartEntry(50)
+            {
+                Label = "Throttle:",
+                ValueLabel = "50%",
+                Color = SKColor.Parse("#b455b6")
+            }
+        };
+
 
         public BluetoothDataPage(IDevice connectedDevice)
         {
             InitializeComponent();
+            throttleChart.Chart = new RadialGaugeChart { Entries = entries, IsAnimated = true, MinValue = 0, MaxValue = 100, LineSize = 20, StartAngle = 90 ,BackgroundColor = SKColor.Empty, };
             _connectedDevice = connectedDevice;
             // InitButton.IsEnabled = !(ScanButton.IsEnabled = false);
         }
