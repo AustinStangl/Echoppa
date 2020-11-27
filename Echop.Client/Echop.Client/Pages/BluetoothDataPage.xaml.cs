@@ -130,7 +130,7 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the Datas length-----------\\
                                 //tring btData = receivedBytes.Length.ToString();
-                                //RawData.Text = btdata;
+                               // RawData.Text = btdata;
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
@@ -171,7 +171,7 @@ namespace Echop.Client
             throttleData = btdata.Substring(6, 4);
             busData = btdata.Substring(10, 4);
             currentData = btdata.Substring(14, 4);
-            freqData = btdata.Substring(18, 4);
+            switchFreqData = btdata.Substring(18, 4);
             tempData = btdata.Substring(22, 4);
             targetvData = btdata.Substring(26, 4);
             directionData = btdata.Substring(30, 1);
@@ -194,6 +194,8 @@ namespace Echop.Client
             currentD = (float.Parse(currentData)) / 10;
             TotalCurrent.Text = "Total Current: " + (currentD.ToString()) + "A";
 
+            switchFreqD = (float.Parse(switchFreqData)) / 10;
+            Frequency.Text = "Freq: " + (switchFreqD.ToString()) + "Hz";
 
             tempD = (float.Parse(tempData)) / 10;
             Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
