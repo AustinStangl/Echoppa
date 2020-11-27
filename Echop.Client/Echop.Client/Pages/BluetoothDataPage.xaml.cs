@@ -139,6 +139,7 @@ namespace Echop.Client
                                     dataParse();
                                     btdata = null;          //Removes previous string after parsing data\
                                     formatTheData();
+                                    InitButton.BackgroundColor = Color.Transparent;
                                 }
 
 

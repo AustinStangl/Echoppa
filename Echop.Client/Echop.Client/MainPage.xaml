@@ -23,15 +23,17 @@
         </StackLayout>
         <ActivityIndicator x:Name="IsBusyIndicator"
                            Scale="1" 
-                           AbsoluteLayout.LayoutBounds="185, 600" />
+                           AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
+                           />
         <Button x:Name="ScanButton"
                     Margin="10"
                     Clicked="ScanButton_Clicked"
                     Text= "Find My Device" 
                     BackgroundColor="#fda47e" 
-                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All" 
+                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.15" AbsoluteLayout.LayoutFlags="All" 
                     
                     />
+        
     </AbsoluteLayout>
 
 </ContentPage>

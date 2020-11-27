@@ -14,13 +14,15 @@
 
 
       <AbsoluteLayout >
-              <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" BackgroundColor="#fda47e" />
+                <ProgressBar x:Name="ThrottleBar" ProgressColor="Green" BackgroundColor="#fda47e" AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All"/>
+                <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" BackgroundColor="Transparent" />
 
-               
-                <ProgressBar x:Name="ThrottleBar" ProgressColor="Green"   AbsoluteLayout.LayoutBounds="0.5, 0.32, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All"/>
-                <Button x:Name="Temp"           Text="" AbsoluteLayout.LayoutBounds="0.5, 0.32, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" />
-                <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="0.93, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                 <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.17, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+
+                
+                <Button x:Name="Temp"           Text="" AbsoluteLayout.LayoutBounds="0.5, 0.32, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e" />
+                <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="0.93, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                
                 <Button x:Name="BusVoltage"     Text=""  AbsoluteLayout.LayoutBounds="0.07, 0.47, 0.28, 0.12"  AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                 <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                 <Button x:Name="Direction"      Text=""  AbsoluteLayout.LayoutBounds="0.07, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
