@@ -10,28 +10,30 @@
              Visual="Material"
              mc:Ignorable="d">
     <ContentPage.Content>
+        <ContentView>
 
 
-        <AbsoluteLayout >
-            <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="5, 5, 130, 130" Clicked="ThrottleButton_Clicked" BackgroundColor="#fda47e" />
-            <Button x:Name="BusVoltage"     Text=""  AbsoluteLayout.LayoutBounds="140, 5, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="275, 5, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="5, 140, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="Temp"           Text=""  AbsoluteLayout.LayoutBounds="140, 140, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="275, 140, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="Direction"      Text=""   AbsoluteLayout.LayoutBounds="5, 275, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="140, 275, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="275, 275, 130, 130" BackgroundColor="#fda47e"/>
-            <Button x:Name="Flags"      Text=""   AbsoluteLayout.LayoutBounds="25, 410, 361, 100" BackgroundColor="#fda47e"/>
-            <ProgressBar x:Name="ThrottleBar" ProgressColor="Orange" BackgroundColor="SlateGray" WidthRequest="200" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="CenterAndExpand"/>
-            <skia:SKCanvasView x:Name="throttleCanvas"
+      <AbsoluteLayout >
+              <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="0.05, 0.025, 0.3, 0.2" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" BackgroundColor="#fda47e" />
+              <Button x:Name="BusVoltage"     Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.025, 0.3, 0.2"  AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+              <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="0.95, 0.025, 0.3, 0.2" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+              <Button x:Name="Frequency"      Text=""  AbsoluteLayout.LayoutBounds="0.05, 0.29, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="Temp"           Text="" AbsoluteLayout.LayoutBounds="0.5, 0.29, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="TargetVoltage"      Text=""  AbsoluteLayout.LayoutBounds="0.95, 0.29, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="Direction"      Text=""  AbsoluteLayout.LayoutBounds="0.05, 0.555, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.555, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="0.95, 0.555, 0.3, 0.2"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="Flags"      Text=""   AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+             <ProgressBar x:Name="ThrottleBar" ProgressColor="Orange" BackgroundColor="SlateGray" WidthRequest="200" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="CenterAndExpand"/>
+           <skia:SKCanvasView x:Name="throttleCanvas"
                                PaintSurface="throttleCanvas_PaintSurface"
-                               WidthRequest="400"
-                               HeightRequest="400"/>
-            <!--  <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
+                               AbsoluteLayout.LayoutBounds="0.05, 0.025, 0.3, 0.2" AbsoluteLayout.LayoutFlags="All"
+                              /> <!--WidthRequest="400"
+                               HeightRequest="400"
+               
+                -->
+                <!--      <Label x:Name="RawData"      Text=""   AbsoluteLayout.LayoutBounds="5, 410, 401, 130" BackgroundColor="#fda47e"/>
             -->
-
-            
 
             <Button x:Name="InitButton"
                     
@@ -39,7 +41,10 @@
                     Text="Connect" 
                     BackgroundColor="#fda47e"
                     TextColor="#000000"
-                    AbsoluteLayout.LayoutBounds="130, 600, 151, 60 "/>
+                    AbsoluteLayout.LayoutBounds="0.5, 0.96, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
+                    />
+
+            
 
             <Grid Margin="5" >
                 
@@ -88,7 +93,7 @@
             </AbsoluteLayout>
 
 
-       
+       </ContentView>
 
 
 
