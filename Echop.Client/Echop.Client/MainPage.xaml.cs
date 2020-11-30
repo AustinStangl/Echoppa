@@ -23,7 +23,8 @@ namespace Echop.Client
             _bluetoothAdapter = CrossBluetoothLE.Current.Adapter;
             _bluetoothAdapter.DeviceDiscovered += (sender, foundBleDevice) =>
             {
-                if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
+                //if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
+                if (foundBleDevice.Device.Name == "BTboi")
                     _gattDevices.Add(foundBleDevice.Device);
                 
 
