@@ -4,33 +4,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             Title="Scan for BLE devices"
+             Title=""
              Visual="Material"
              mc:Ignorable="d" 
-             BackgroundColor="#FFFFFF">
+             BackgroundColor="#FFFFFF" NavigationPage.HasNavigationBar="False"
+             >
+        
     <AbsoluteLayout>
         
         <StackLayout Orientation="Vertical">
             <ContentView  VerticalOptions="FillAndExpand">
                 
             </ContentView>
-
-
+           
             <ListView x:Name="foundBleDevicesListView"
                       Footer=""
-                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped" 
+                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped"  
+                      
+                      
+                      
                       />
         </StackLayout>
         <ActivityIndicator x:Name="IsBusyIndicator"
                            Scale="1" 
                            AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
                            />
+        
         <Button x:Name="ScanButton"
                     Margin="10"
                     Clicked="ScanButton_Clicked"
                     Text= "Find My Device" 
                     BackgroundColor="#fda47e" 
-                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.15" AbsoluteLayout.LayoutFlags="All" 
+                    FontSize="11"
+                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.11" AbsoluteLayout.LayoutFlags="All" 
                     
                     />
         

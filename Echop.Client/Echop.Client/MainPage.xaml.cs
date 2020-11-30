@@ -25,7 +25,10 @@ namespace Echop.Client
             {
                 if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
                     _gattDevices.Add(foundBleDevice.Device);
+                
+
             };
+            
         }
 
         private async Task<bool> PermissionsGrantedAsync()

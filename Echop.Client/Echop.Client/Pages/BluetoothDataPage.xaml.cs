@@ -200,6 +200,18 @@ namespace Echop.Client
 
             tempD = (float.Parse(tempData)) / 10;
             Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
+            while (tempD <= 29)
+            { 
+                Temp.BackgroundColor = Color.Green; 
+            }
+            while (tempD >= 30 && tempD <= 59)
+            {
+                Temp.BackgroundColor = Color.Yellow;
+            }
+            while (tempD >= 60)
+            {
+                Temp.BackgroundColor = Color.Red;
+            }
 
             targetvD = (float.Parse(targetvData)) / 10;
             TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
