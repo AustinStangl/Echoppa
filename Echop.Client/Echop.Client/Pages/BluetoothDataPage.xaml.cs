@@ -140,9 +140,9 @@ namespace Echop.Client
                                 if (dataLength >= 39 && (btdata.Substring(37, 2) == "GG"))     //Checks to make sure the recived data is the correct length
                                 {
                                     dataParse();
-                                    btdata = null;          //Removes previous string after parsing data\
                                     formatTheData();
                                     InitButton.BackgroundColor = Color.Transparent;
+                                    btdata = null;          //Removes previous string after parsing data\
                                 }
                                 else if(dataLength >= 39)
                                 {
