@@ -46,7 +46,7 @@ namespace Echop.Client
         private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData, startCheck;
         private float busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
 
-        private float throttleD = 0;
+        private float throttleD = 0, throttlePosition = 0;
 
         SKPaint tanFillPaint = new SKPaint
         {
@@ -94,9 +94,11 @@ namespace Echop.Client
             //indicator Dial
             //canvas.DrawPath(DialRing, grayFillPaint);
 
+            throttlePosition += (throttleD - throttlePosition) / (float)6.0;
+
             //needle
             canvas.Save();
-            canvas.RotateDegrees(270f * throttleD/100f);
+            canvas.RotateDegrees(270f * throttlePosition/100f);
             canvas.DrawLine(0, 0, -70, 70, orangeStrokePaint);
             canvas.Restore();
         }
@@ -130,16 +132,21 @@ namespace Echop.Client
 
                                 //----------Uncomment the lines below to display the Datas length-----------\\
                                 //tring btData = receivedBytes.Length.ToString();
-                               // RawData.Text = btdata;
+                                // RawData.Text = btdata;
 
                                 //----------Uncomment the lines below to display the RawData----------\\
                                 //RawData.Text = btdata;
-                                if (btdata.Length >= 38)     //Checks to make sure the recived data is the correct length
+                                var dataLength = btdata.Length;
+                                if (dataLength >= 39 && (btdata.Substring(37, 2) == "GG"))     //Checks to make sure the recived data is the correct length
                                 {
                                     dataParse();
                                     btdata = null;          //Removes previous string after parsing data\
                                     formatTheData();
                                     InitButton.BackgroundColor = Color.Transparent;
+                                }
+                                else if(dataLength >= 39)
+                                {
+                                    btdata = null;
                                 }
 
 
