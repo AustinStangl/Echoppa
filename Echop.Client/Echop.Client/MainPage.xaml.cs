@@ -23,8 +23,8 @@ namespace Echop.Client
             _bluetoothAdapter = CrossBluetoothLE.Current.Adapter;
             _bluetoothAdapter.DeviceDiscovered += (sender, foundBleDevice) =>
             {
-                //if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
-                if (foundBleDevice.Device.Name == "BTboi")
+               if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
+                //if (foundBleDevice.Device.Name == "BTboi")
                     _gattDevices.Add(foundBleDevice.Device);
                 
 
@@ -67,6 +67,11 @@ namespace Echop.Client
             foundBleDevicesListView.ItemsSource = _gattDevices.ToArray();
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
             ScanButton.Text = "Rescan";
+
+            if (foundBleDevicesListView.ItemsSource == "BTboi")
+            {
+                ScanButton.BackgroundColor = Color.Red;
+            }
         }
 
         private async void FoundBluetoothDevicesListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -75,7 +80,8 @@ namespace Echop.Client
             IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             IDevice selectedItem = e.Item as IDevice;
             //ScanButton.Text = "Rescan";
-
+            
+            
             if (selectedItem.State == DeviceState.Connected)
             {
                 await Navigation.PushAsync(new BluetoothDataPage(selectedItem));

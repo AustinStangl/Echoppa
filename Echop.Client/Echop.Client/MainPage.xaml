@@ -7,23 +7,27 @@
              Title=""
              Visual="Material"
              mc:Ignorable="d" 
-             BackgroundColor="#FFFFFF" NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#363635" NavigationPage.HasNavigationBar="False"
              >
         
     <AbsoluteLayout>
+
+        <Image Source="logo2.bmp" AbsoluteLayout.LayoutBounds= "0.5, 0, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All"  />
+      
+        <ListView x:Name="foundBleDevicesListView"
+                      Footer=""
+                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped"  
+                      
+                      BackgroundColor="#8c8a8b"
+                      AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All"
+                      />
         
         <StackLayout Orientation="Vertical">
             <ContentView  VerticalOptions="FillAndExpand">
                 
             </ContentView>
            
-            <ListView x:Name="foundBleDevicesListView"
-                      Footer=""
-                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped"  
-                      
-                      
-                      
-                      />
+          
         </StackLayout>
         <ActivityIndicator x:Name="IsBusyIndicator"
                            Scale="1" 

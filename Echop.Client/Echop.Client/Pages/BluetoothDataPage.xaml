@@ -8,7 +8,8 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              Title="Talking to BLE UART"
              Visual="Material"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             BackgroundColor="#363635">
     <ContentPage.Content>
         <ContentView>
 

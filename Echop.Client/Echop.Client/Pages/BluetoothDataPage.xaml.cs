@@ -200,15 +200,15 @@ namespace Echop.Client
 
             tempD = (float.Parse(tempData)) / 10;
             Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
-            while (tempD <= 29)
+            if (tempD <= 29)
             { 
                 Temp.BackgroundColor = Color.Green; 
             }
-            while (tempD >= 30 && tempD <= 59)
+            if (tempD >= 30 && tempD <= 59)
             {
                 Temp.BackgroundColor = Color.Yellow;
             }
-            while (tempD >= 60)
+            if (tempD >= 60)
             {
                 Temp.BackgroundColor = Color.Red;
             }
