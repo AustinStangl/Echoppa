@@ -47,7 +47,8 @@ namespace Echop.Client
 
         private async void ScanButton_Clicked(object sender, EventArgs e)
         {
-            foundBleDevicesListView.BackgroundColor = Color.Transparent;
+            if (foundBleDevicesListView.BackgroundColor == Color.Black)
+            { foundBleDevicesListView.BackgroundColor = Color.Transparent; }
             // IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             foundBleDevicesListView.ItemsSource = null;
             ScanButton.Text = "Searching For Device";
