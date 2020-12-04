@@ -12,7 +12,7 @@
         
     <AbsoluteLayout>
 
-        <Image Source="logo2.bmp" IsAnimationPlaying="True" AbsoluteLayout.LayoutBounds= "0.5, 0, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All"  />
+        <Image Source="sde2.png"  AbsoluteLayout.LayoutBounds= "0.5, 0.1, 0.9, 0.5" AbsoluteLayout.LayoutFlags="All"  />
         <Image x:Name="ConnectImage" Source="" AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All"/>
         <ListView x:Name="foundBleDevicesListView"
                       Footer=""
@@ -35,17 +35,22 @@
                            
                            AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
                            /> -->
-        
+        <Image Source="FindMyDevice" AbsoluteLayout.LayoutBounds= "0.5, 1.153, 0.6, 0.3" AbsoluteLayout.LayoutFlags="All"
+               
+               />
+      
         <Button x:Name="ScanButton"
                     Margin="10"
                     Clicked="ScanButton_Clicked"
                     Text= "Find My Device" 
-                    BackgroundColor="#fda47e" 
+                    BackgroundColor="Transparent" 
+                    
                     FontSize="11"
-                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.9, 0.4, 0.11" AbsoluteLayout.LayoutFlags="All" 
+                    IsVisible="True"
+                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.9, 0.53, 0.11" AbsoluteLayout.LayoutFlags="All" 
                     
                     />
-        
+       
     </AbsoluteLayout>
 
 </ContentPage>
