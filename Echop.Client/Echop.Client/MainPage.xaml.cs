@@ -49,9 +49,14 @@ namespace Echop.Client
         {
             if (foundBleDevicesListView.BackgroundColor == Color.Black)
             { foundBleDevicesListView.BackgroundColor = Color.Transparent; }
+
             // IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
+            
+            
             foundBleDevicesListView.ItemsSource = null;
             ScanButton.Text = "Searching For Device";
+            ScanButton.IsEnabled = false;
+            
             ConnectionAnimation();
             if (!await PermissionsGrantedAsync())
             {
@@ -69,18 +74,23 @@ namespace Echop.Client
 
             foundBleDevicesListView.ItemsSource = _gattDevices.ToArray();
             ConnectImage.Source = null;
-            foundBleDevicesListView.BackgroundColor = Color.Black;
+           // foundBleDevicesListView.BackgroundColor = Color.Black;
          //   IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
-            ScanButton.Text = "Rescan";
+            ScanButton.Text = "Rescan"; 
+            ScanButton.IsEnabled = true;
+            
+            if (ConnectImage.IsAnimationPlaying == true)
+            {
+                ConnectImage.IsAnimationPlaying = false;
+            }
 
 
         }
         private async void ConnectionAnimation()
-            {
+        {
             ConnectImage.Source = "Phone.gif";
             ConnectImage.IsAnimationPlaying = true;
             
-
         }
         private async void FoundBluetoothDevicesListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
