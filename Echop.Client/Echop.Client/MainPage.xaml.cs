@@ -23,13 +23,14 @@ namespace Echop.Client
             _bluetoothAdapter = CrossBluetoothLE.Current.Adapter;
             _bluetoothAdapter.DeviceDiscovered += (sender, foundBleDevice) =>
             {
-               if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
-                //if (foundBleDevice.Device.Name == "BTboi")
+
+                if (foundBleDevice.Device != null && !string.IsNullOrEmpty(foundBleDevice.Device.Name))
+                    //if (foundBleDevice.Device.Name == "BTboi")
                     _gattDevices.Add(foundBleDevice.Device);
-                
+
 
             };
-            
+
         }
 
         private async Task<bool> PermissionsGrantedAsync()
@@ -46,14 +47,15 @@ namespace Echop.Client
 
         private async void ScanButton_Clicked(object sender, EventArgs e)
         {
-            IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
+            foundBleDevicesListView.BackgroundColor = Color.Transparent;
+            // IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             foundBleDevicesListView.ItemsSource = null;
             ScanButton.Text = "Searching For Device";
-
+            ConnectionAnimation();
             if (!await PermissionsGrantedAsync())
             {
                 await DisplayAlert("Permission required", "Application needs location permission", "OK");
-                IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
+            //    IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
                 return;
             }
 
@@ -65,19 +67,24 @@ namespace Echop.Client
             await _bluetoothAdapter.StartScanningForDevicesAsync();
 
             foundBleDevicesListView.ItemsSource = _gattDevices.ToArray();
-            IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
+            ConnectImage.Source = null;
+            foundBleDevicesListView.BackgroundColor = Color.Black;
+         //   IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
             ScanButton.Text = "Rescan";
 
-            if (foundBleDevicesListView.ItemsSource == "BTboi")
-            {
-                ScanButton.BackgroundColor = Color.Red;
-            }
-        }
 
+        }
+        private async void ConnectionAnimation()
+            {
+            ConnectImage.Source = "Phone.gif";
+            ConnectImage.IsAnimationPlaying = true;
+            
+
+        }
         private async void FoundBluetoothDevicesListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             
-            IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
+          //  IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = false);
             IDevice selectedItem = e.Item as IDevice;
             //ScanButton.Text = "Rescan";
             
@@ -100,7 +107,7 @@ namespace Echop.Client
                 }
             }
 
-            IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
+         //   IsBusyIndicator.IsVisible = IsBusyIndicator.IsRunning = !(ScanButton.IsEnabled = true);
         }
     }
 }

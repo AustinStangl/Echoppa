@@ -12,13 +12,14 @@
         
     <AbsoluteLayout>
 
-        <Image Source="logo2.bmp" AbsoluteLayout.LayoutBounds= "0.5, 0, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All"  />
-      
+        <Image Source="logo2.bmp" IsAnimationPlaying="True" AbsoluteLayout.LayoutBounds= "0.5, 0, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All"  />
+        <Image x:Name="ConnectImage" Source="" AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All"/>
         <ListView x:Name="foundBleDevicesListView"
                       Footer=""
                       ItemTapped="FoundBluetoothDevicesListView_ItemTapped"  
+                     
+                    
                       
-                      BackgroundColor="#8c8a8b"
                       AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All"
                       />
         
@@ -29,10 +30,11 @@
            
           
         </StackLayout>
-        <ActivityIndicator x:Name="IsBusyIndicator"
+      <!--  <ActivityIndicator x:Name="IsBusyIndicator"
                            Scale="1" 
-                           AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
-                           />
+                           
+                           AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
+                           /> -->
         
         <Button x:Name="ScanButton"
                     Margin="10"
@@ -40,7 +42,7 @@
                     Text= "Find My Device" 
                     BackgroundColor="#fda47e" 
                     FontSize="11"
-                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.82, 0.4, 0.11" AbsoluteLayout.LayoutFlags="All" 
+                    TextColor="#000000" AbsoluteLayout.LayoutBounds= "0.5, 0.9, 0.4, 0.11" AbsoluteLayout.LayoutFlags="All" 
                     
                     />
         

@@ -6,7 +6,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             Title="Talking to BLE UART"
+             Title=""
              Visual="Material"
              mc:Ignorable="d"
              BackgroundColor="#363635">
