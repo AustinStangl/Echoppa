@@ -44,7 +44,7 @@ namespace Echop.Client
         private ICharacteristic sendCharacteristic;
         private ICharacteristic receiveCharacteristic;
         private string btdata, throttleData, busData, currentData, freqData, tempData, targetvData, switchFreqData, regSafetyInData, driverStateData, directionData, flagData, startCheck;
-        private float busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD;
+        private float busD, currentD, freqD, tempD, targetvD, switchFreqD, regSafetyInD, driverStateD, directionD, flagD, flag1D, flag2D, flag3D, flag4D;
 
         private float throttleD = 0, throttlePosition = 0;
 
@@ -170,7 +170,7 @@ namespace Echop.Client
 
         private void ThrottleButton_Clicked(object sender, EventArgs e)
         {
-             Navigation.PushAsync(new ThrottlePage(Throttle.Text));
+           //  Navigation.PushAsync(new ThrottlePage(Throttle.Text));
         }
         private void dataParse()
         {
@@ -207,17 +207,20 @@ namespace Echop.Client
 
             tempD = (float.Parse(tempData)) / 10;
             Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
-            if (tempD <= 29)
+            if (tempD <= 79)
             { 
-                Temp.BackgroundColor = Color.Green; 
+                Temp.BackgroundColor = Color.Green;
+                Temp.TextColor = Color.White;
             }
-            if (tempD >= 30 && tempD <= 59)
+            if (tempD >= 80 && tempD <= 99)
             {
                 Temp.BackgroundColor = Color.Yellow;
+                Temp.TextColor = Color.Black;
             }
-            if (tempD >= 60)
+            if (tempD >= 100)
             {
                 Temp.BackgroundColor = Color.Red;
+                Temp.TextColor = Color.White;
             }
 
             targetvD = (float.Parse(targetvData)) / 10;
@@ -255,8 +258,8 @@ namespace Echop.Client
 
             }
 
-            flagD = (float.Parse(flagData));
-            Flags.Text = "Flags: " + (flagD.ToString());
+
+
             /*   private async void SendCommandButton_Clicked(object sender, EventArgs e)
                    {
                        try
@@ -271,6 +274,60 @@ namespace Echop.Client
                            //Output1.Text += "Error sending comand to UART." + Environment.NewLine;
                        }
                    }*/
+            FlagsData();
+
+        }
+        
+        private void FlagsData()
+            {
+            string flag1 = flagData.Substring(3, 1);
+            string flag2 = flagData.Substring(2, 1);
+            string flag3 = flagData.Substring(1, 1);
+            string flag4 = flagData.Substring(0, 1);
+
+            string flagD1, flagD2, flagD3, flagD4;
+
+            if (flag1 == "1")
+            {
+                flagD1 = "Under Voltage " + Environment.NewLine;
+            }
+
+            else
+            {
+                flagD1 = "";
+            }
+
+            if (flag2 == "1")
+            {
+                // Flags.Text += "Yes%/n";
+                flagD2 = "Over Voltage " + Environment.NewLine;
+            }
+            else
+            {
+                flagD2 = "";
+            }
+
+            if (flag3 == "1")
+            {
+                // Flags.Text += "Yes%/n";
+                flagD3 = "High Current " + Environment.NewLine;
+            }
+            else
+            {
+                flagD3 = "";
+            }
+
+            if (flag4 == "1")
+            {
+                //Flags.Text += "Yes%/n";
+                flagD4 = "Over Current " + Environment.NewLine;
+            }
+            else
+            {
+                flagD4 = "";
+            }
+
+            Flags.Text = flagD1 + flagD2 + flagD3 + flagD4;
         }
 
     }
