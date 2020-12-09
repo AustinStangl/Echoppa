@@ -33,17 +33,17 @@
       <!--  <ActivityIndicator x:Name="IsBusyIndicator"
                            Scale="1" 
                            
-                           AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds= "0.5, 0.5, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"<Image Source="FindMyDevice" AbsoluteLayout.LayoutBounds= "0.5, 1.153, 0.6, 0.3" AbsoluteLayout.LayoutFlags="All"
                            /> -->
-        <Image Source="FindMyDevice" AbsoluteLayout.LayoutBounds= "0.5, 1.153, 0.6, 0.3" AbsoluteLayout.LayoutFlags="All"
+        
                
-               />
+               
       
         <Button x:Name="ScanButton"
                     Margin="10"
                     Clicked="ScanButton_Clicked"
                     Text= "Find My Device" 
-                    BackgroundColor="Transparent" 
+                    BackgroundColor="#fda47e" 
                     
                     FontSize="11"
                     IsVisible="True"

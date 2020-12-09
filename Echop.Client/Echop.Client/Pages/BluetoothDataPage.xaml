@@ -15,9 +15,11 @@
 
 
       <AbsoluteLayout >
-                <ProgressBar x:Name="ThrottleBar" ProgressColor="#54B04F" BackgroundColor="#fda47e" AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All"/>
-                <Button x:Name="Throttle"       Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" BackgroundColor="Transparent" />
 
+                <Button x:Name="Throttle"       Text="" BackgroundColor ="#fda47e"  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" />
+                <ProgressBar x:Name="ThrottleBar"  ProgressColor="#54B04F" BackgroundColor="#fda47e" AbsoluteLayout.LayoutBounds="0.5, 0.026, 0.88, 0.11"    AbsoluteLayout.LayoutFlags="All"/>
+               
+          
                 <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.17, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
 
                 
@@ -29,7 +31,7 @@
                 <Button x:Name="Direction"      Text=""  AbsoluteLayout.LayoutBounds="0.07, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                 <Button x:Name="RegenSafetyIn"      Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                 <Button x:Name="DriverState"      Text=""   AbsoluteLayout.LayoutBounds="0.93, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="Flags"      Text=""   AbsoluteLayout.LayoutBounds= "0.5, 0.81, 0.9, 0.16" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="Flags"      Text=""   AbsoluteLayout.LayoutBounds= "0.5, 0.8, 0.9, 0.15" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                
            <skia:SKCanvasView x:Name="throttleCanvas"
                                PaintSurface="throttleCanvas_PaintSurface"
@@ -45,7 +47,7 @@
             <Button x:Name="InitButton"
                     
                     Clicked="InitalizeCommandButton_Clicked"
-                    Text="Connect" 
+                    Text="Begin" 
                     BackgroundColor="#fda47e"
                     TextColor="#000000"
                     AbsoluteLayout.LayoutBounds="0.5, 0.96, 0.4, 0.1" AbsoluteLayout.LayoutFlags="All"
