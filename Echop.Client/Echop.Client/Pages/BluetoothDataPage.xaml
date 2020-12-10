@@ -15,11 +15,12 @@
 
 
       <AbsoluteLayout >
+                
 
                 <Button x:Name="Throttle"       Text="" BackgroundColor ="#fda47e"  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" />
                 <ProgressBar x:Name="ThrottleBar"  ProgressColor="#54B04F" BackgroundColor="#fda47e" AbsoluteLayout.LayoutBounds="0.5, 0.026, 0.88, 0.11"    AbsoluteLayout.LayoutFlags="All"/>
-               
-          
+                <Image Source="Throttletxt" AbsoluteLayout.LayoutBounds="0.1, 0, 0.3, 0.15" AbsoluteLayout.LayoutFlags="All" />
+
                 <Button x:Name="TotalCurrent"   Text=""  AbsoluteLayout.LayoutBounds="0.5, 0.17, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
 
                 

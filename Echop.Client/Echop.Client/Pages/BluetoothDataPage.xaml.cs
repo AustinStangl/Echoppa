@@ -200,7 +200,7 @@ namespace Echop.Client
             BusVoltage.Text = "Bus Voltage: " + (busD.ToString()) + "V";
 
             currentD = (float.Parse(currentData)) / 10;
-            TotalCurrent.Text = "Total Current: " + (currentD.ToString()) + "A";
+            TotalCurrent.Text = "" + (currentD.ToString()) + "A";
 
             switchFreqD = (float.Parse(switchFreqData)) / 10;
             Frequency.Text = "Freq: " + (switchFreqD.ToString()) + "Hz";
@@ -227,7 +227,15 @@ namespace Echop.Client
             TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
 
             directionD = (float.Parse(directionData));
-            Direction.Text = "Direction: " + (directionD.ToString());
+            if (regSafetyInD == 0)
+            {
+                Direction.Text = "Direction: Forward";
+            }
+            else
+            {
+                Direction.Text = "Direction: Reverse";
+            }
+            
 
             regSafetyInD = (float.Parse(regSafetyInData));
             if (regSafetyInD == 1)
