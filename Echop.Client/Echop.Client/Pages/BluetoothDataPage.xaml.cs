@@ -200,7 +200,7 @@ namespace Echop.Client
             BusVoltage.Text = "Bus Voltage: " + (busD.ToString()) + "V";
 
             currentD = (float.Parse(currentData)) / 10;
-            TotalCurrent.Text = "" + (currentD.ToString()) + "A";
+            TotalCurrent.Text = "Total Current:" + (currentD.ToString()) + "A";
 
             switchFreqD = (float.Parse(switchFreqData)) / 10;
             Frequency.Text = "Freq: " + (switchFreqD.ToString()) + "Hz";
