@@ -197,16 +197,16 @@ namespace Echop.Client
             Throttle.Text = "Throttle: " + (throttleD.ToString()) + "%";
 
             busD = (float.Parse(busData)) / 10;
-            BusVoltage.Text = "Bus Voltage: " + (busD.ToString()) + "V";
+            BusVoltage.Text = "" + (busD.ToString()) + "V";
 
             currentD = (float.Parse(currentData)) / 10;
-            TotalCurrent.Text = "Total Current:" + (currentD.ToString()) + "A";
+            TotalCurrent.Text = "" + (currentD.ToString()) + "A";
 
             switchFreqD = (float.Parse(switchFreqData)) / 10;
-            Frequency.Text = "Freq: " + (switchFreqD.ToString()) + "Hz";
+            Frequency.Text = "" + (switchFreqD.ToString()) + "Hz";
 
             tempD = (float.Parse(tempData)) / 10;
-            Temp.Text = "Tempurature: " + (tempD.ToString()) + "C";
+            Temp.Text = "" + (tempD.ToString()) + "C";
             if (tempD <= 79)
             { 
                 Temp.BackgroundColor = Color.Green;
@@ -224,40 +224,40 @@ namespace Echop.Client
             }
 
             targetvD = (float.Parse(targetvData)) / 10;
-            TargetVoltage.Text = "Target Voltage: " + (targetvD.ToString()) + "V";
+            TargetVoltage.Text = "" + (targetvD.ToString()) + "V";
 
             directionD = (float.Parse(directionData));
             if (regSafetyInD == 0)
             {
-                Direction.Text = "Direction: Forward";
+                Direction.Text = "Forward";
             }
             else
             {
-                Direction.Text = "Direction: Reverse";
+                Direction.Text = "Reverse";
             }
             
 
             regSafetyInD = (float.Parse(regSafetyInData));
             if (regSafetyInD == 1)
             {
-                RegenSafetyIn.Text = "Regen Safety In: ON";
+                RegenSafetyIn.Text = "ON";
                 RegenSafetyIn.BackgroundColor = Color.Green;
             }
             else
             {
-                RegenSafetyIn.Text = "Regen Safety In: OFF";
+                RegenSafetyIn.Text = "OFF";
                 RegenSafetyIn.BackgroundColor = Color.Red;
             }
 
             driverStateD = (float.Parse(driverStateData));
             if (driverStateD == 1)
             {
-                DriverState.Text = "Driver State: ON";
+                DriverState.Text = "ON";
                 DriverState.BackgroundColor = Color.Green;
             }
             else
             {
-                DriverState.Text = "Driver State: OFF";
+                DriverState.Text = "OFF";
                 DriverState.BackgroundColor = Color.Red;
 
 

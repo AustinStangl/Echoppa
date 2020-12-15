@@ -125,6 +125,9 @@
     <AndroidResource Include="Resources\drawable\PowerdBike_2.gif" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\drawable\NewFolder1\" />
+    <Folder Include="Resources\drawable\NewFolder2\" />
+    <Folder Include="Resources\drawable\NewFolder3\" />
     <Folder Include="Resources\value\" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +162,33 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Throttletxt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\TotalCurrent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\temp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Throttle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BusVoltage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\TargetVoltage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\frequency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\DRIVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Regen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Direction.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

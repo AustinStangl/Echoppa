@@ -19,20 +19,34 @@
 
                 <Button x:Name="Throttle"       Text="" BackgroundColor ="#fda47e"  AbsoluteLayout.LayoutBounds="0.5, 0.02, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" Clicked="ThrottleButton_Clicked" />
                 <ProgressBar x:Name="ThrottleBar"  ProgressColor="#54B04F" BackgroundColor="#fda47e" AbsoluteLayout.LayoutBounds="0.5, 0.026, 0.88, 0.11"    AbsoluteLayout.LayoutFlags="All"/>
-                <Image Source="Throttletxt" AbsoluteLayout.LayoutBounds="0.1, 0, 0.3, 0.15" AbsoluteLayout.LayoutFlags="All" />
+                <Image Source="throttle" AbsoluteLayout.LayoutBounds="0.1, -0.03, 0.3, 0.2" AbsoluteLayout.LayoutFlags="All" />
 
-                <Button x:Name="TotalCurrent"   Text="Total Current:"  AbsoluteLayout.LayoutBounds="0.5, 0.17, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="TotalCurrent"   Text="" FontSize="20" AbsoluteLayout.LayoutBounds="0.5, 0.17, 0.9, 0.12" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="TotalCurrent" AbsoluteLayout.LayoutBounds="0.1, 0.15, 0.2, 0.1" AbsoluteLayout.LayoutFlags="All" />
 
-                
-                <Button x:Name="Temp"           Text="Tempurature:" AbsoluteLayout.LayoutBounds="0.5, 0.32, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e" />
-                <Button x:Name="Frequency"      Text="Frequency:"  AbsoluteLayout.LayoutBounds="0.93, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                
-                <Button x:Name="BusVoltage"     Text="Bus Voltage:"  AbsoluteLayout.LayoutBounds="0.07, 0.47, 0.28, 0.12"  AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="TargetVoltage"      Text="Target Voltage:"  AbsoluteLayout.LayoutBounds="0.5, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="Direction"      Text="Direction:"  AbsoluteLayout.LayoutBounds="0.07, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="RegenSafetyIn"      Text="Regen Safety In:"  AbsoluteLayout.LayoutBounds="0.5, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="DriverState"      Text="Driver State:"   AbsoluteLayout.LayoutBounds="0.93, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
-                <Button x:Name="Flags"      Text="Flags:"   AbsoluteLayout.LayoutBounds= "0.5, 0.8, 0.9, 0.15" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Button x:Name="Temp"           Text="" FontSize="20" AbsoluteLayout.LayoutBounds="0.5, 0.32, 0.9, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e" />
+                <Image Source="temp" AbsoluteLayout.LayoutBounds="0.1, 0.3, 0.3, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+
+                <Button x:Name="Frequency"      Text="" FontSize="20"  AbsoluteLayout.LayoutBounds="0.93, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="Frequency" AbsoluteLayout.LayoutBounds="0.96, 0.44, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+          
+                <Button x:Name="BusVoltage"     Text="" FontSize="20"  AbsoluteLayout.LayoutBounds="0.07, 0.47, 0.28, 0.12"  AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="BusVoltage" AbsoluteLayout.LayoutBounds="0.12, 0.44, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="TargetVoltage"      Text="" FontSize="20"  AbsoluteLayout.LayoutBounds="0.5, 0.47, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="TargetVoltage" AbsoluteLayout.LayoutBounds="0.5, 0.44, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="Direction"      Text="" FontSize="20"  AbsoluteLayout.LayoutBounds="0.07, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="Direction" AbsoluteLayout.LayoutBounds="0.12, 0.606, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="RegenSafetyIn"      Text="" FontSize="20"  AbsoluteLayout.LayoutBounds="0.5, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="Regen" AbsoluteLayout.LayoutBounds="0.5, 0.606, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="DriverState"      Text="" FontSize="20"   AbsoluteLayout.LayoutBounds="0.93, 0.62, 0.28, 0.12"    AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
+                <Image Source="DRIVER" AbsoluteLayout.LayoutBounds="0.96, 0.606, 0.25, 0.2" AbsoluteLayout.LayoutFlags="All" />
+
+                <Button x:Name="Flags"      Text="Flags:" FontSize="20"   AbsoluteLayout.LayoutBounds= "0.5, 0.8, 0.9, 0.15" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#fda47e"/>
                
            <skia:SKCanvasView x:Name="throttleCanvas"
                                PaintSurface="throttleCanvas_PaintSurface"
