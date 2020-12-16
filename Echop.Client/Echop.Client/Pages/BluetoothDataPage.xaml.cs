@@ -288,10 +288,10 @@ namespace Echop.Client
         
         private void FlagsData()
             {
-            string flag1 = flagData.Substring(3, 1);
-            string flag2 = flagData.Substring(2, 1);
-            string flag3 = flagData.Substring(1, 1);
-            string flag4 = flagData.Substring(0, 1);
+            string flag4 = flagData.Substring(3, 1);
+            string flag3 = flagData.Substring(2, 1);
+            string flag2 = flagData.Substring(1, 1);
+            string flag1 = flagData.Substring(0, 1);
 
             string flagD1, flagD2, flagD3, flagD4;
 
